@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger text-light py-2 main-nav">
+    <div class="container">
+      <a  class="navbar-brand" href="index.html"><img src="../public/images/68863312_356843208576144_4991666959130034176_n.jpg" alt="Logo"></a>
+    </div>
+<!--    <div class="dropdown">-->
+<!--      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--        Dropdown button-->
+<!--      </button>-->
+<!--      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--        <a class="dropdown-item" href="#">Action</a>-->
+<!--        <a class="dropdown-item" href="#">Another action</a>-->
+<!--        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Log</a>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div>
+      <a (click)="logout($event)" *ngIf="isLogin"> <button type="button" class="btn btn-light btn-sm ">Logout</button></a>
+    </div>
+  </nav>
+</header>
