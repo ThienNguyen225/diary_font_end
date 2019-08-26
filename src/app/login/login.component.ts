@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('ACCESS_TOKEN', result.token);
       if (result.token) {
         this.toastr.success('Logged in successfully!');
-        this.router.navigate(['/']);
+        this.router.navigate(['home']);
       } else {
         this.toastr.error('Wrong email or password!');
       }

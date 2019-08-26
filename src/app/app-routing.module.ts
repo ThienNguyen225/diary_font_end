@@ -7,7 +7,8 @@ import {UpdateComponent} from './update/update.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'profile/edit/:id', component: UpdateComponent}
