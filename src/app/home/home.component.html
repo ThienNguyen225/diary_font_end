@@ -1,16 +1,17 @@
+<script src="https://kit.fontawesome.com/6099fabf45.js"></script>
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-danger text-light py-2 main-nav">
     <div class="container">
-      <a  class="navbar-brand" href="index.html"><img src="../public/images/68863312_356843208576144_4991666959130034176_n.jpg" alt="Logo"></a>
+      <a  class="navbar-brand" href="index.html"><img src="../../assets/public/images/68863312_356843208576144_4991666959130034176_n.jpg" alt="Logo"></a>
     </div>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-      </button>
+      <a class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button <i class="fas fa-user"></i>
+      </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" [routerLink]="['/profile']">Action</a>
+        <a class="dropdown-item" [routerLink]="['/user/profile']">Action</a>
         <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Logout</a>
+        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Logout<i class="fas fa-user"></i></a>
       </div>
     </div>
 <!--    <div>-->

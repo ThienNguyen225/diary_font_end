@@ -1,24 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './users/login/login.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component';
 import {ToastrModule} from 'ngx-toastr';
-import { ProfileComponent } from './profile/profile.component';
-import { UpdateComponent } from './update/update.component';
+import { ProfileComponent } from './users/profile/profile.component';
+import { UpdateComponent } from './users/update/update.component';
+import {RegisterComponent} from './users/register/register.component';
+import {TokenInterceptor} from "./interceptors/token.interceptor";
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
     LoginComponent,
     HomeComponent,
-    NavbarComponent,
     ProfileComponent,
     UpdateComponent
   ],
@@ -26,12 +28,17 @@ import { UpdateComponent } from './update/update.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    RouterModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

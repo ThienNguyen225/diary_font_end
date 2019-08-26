@@ -1,0 +1,46 @@
+
+<div class="logreg-forms">
+  <form action="/signup/" class="form-signup" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="social-login">
+      <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span>
+      </button>
+    </div>
+    <br>
+    <div class="social-login">
+      <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span>
+      </button>
+    </div>
+    <br>
+    <input type="text" id="user-name" class="form-control"  formControlName="name" placeholder="Full name" required autofocus="">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+    </div>
+    <input type="email" id="user-email" class="form-control" formControlName="email" placeholder="Email address" required autofocus="">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+         class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="email.errors.email">
+        Incorrect email format
+      </div>
+    </div>
+    <input type="password" id="user-pass" class="form-control" formControlName="password" placeholder="Password" required autofocus="">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+         class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Name must be at least 6 characters long.
+      </div>
+    </div>
+    <input type="password" id="user-repeatpass" name="confirmPassword" class="form-control" placeholder="Repeat Password" required
+           autofocus="">
+    <button class="btn btn-primary btn-block" [disabled]="registerForm.invalid" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+    <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+  </form>
+</div>
