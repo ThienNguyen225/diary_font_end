@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,10 +12,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {ToastrModule} from 'ngx-toastr';
 import { ProfileComponent } from './profile/profile.component';
 import { UpdateComponent } from './update/update.component';
+import {RegisterComponent} from './register/register.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
     LoginComponent,
     HomeComponent,
     NavbarComponent,
@@ -26,12 +29,13 @@ import { UpdateComponent } from './update/update.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
