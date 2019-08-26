@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {LoginService} from "../login.service";
+import {LoginService} from "../../../login.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,11 +22,10 @@ export class LoginComponent implements OnInit {
     this.email = loginForm.email.value;
     this.password = loginForm.password.value;
     this.api.login(this.email, this.password).subscribe(result => {
-      console.log(result.token);
       localStorage.setItem('ACCESS_TOKEN', result.token);
       if (result.token) {
         this.toastr.success('Logged in successfully!');
-        this.router.navigate(['home']);
+        this.router.navigate(['page/home']);
       } else {
         this.toastr.error('Wrong email or password!');
       }
