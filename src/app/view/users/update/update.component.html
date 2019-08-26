@@ -5,6 +5,12 @@
 
     <input type="text" id="name" name="name" formControlName="name" class="form-control" value="{{ user.name }}"
            required="" autofocus="">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+    </div>
 
     <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Edit</button>
     <a [routerLink]="['/profile/me']" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>

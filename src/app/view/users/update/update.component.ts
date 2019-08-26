@@ -20,8 +20,15 @@ export class UpdateComponent implements OnInit {
               private toastr: ToastrService) {
   }
 
+  get name() {
+    return this.updateForm.get('name');
+  }
+
 
   ngOnInit() {
+    this.updateForm = this.fb.group({
+      name: ['', [Validators.required]]
+    });
     this.userService.getUser().subscribe(data => {
       this.user = data;
     });

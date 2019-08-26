@@ -22,7 +22,7 @@
     <div *ngIf="email.invalid && (email.dirty || email.touched)"
          class="alert alert-danger">
       <div *ngIf="email.errors.required">
-        Name is required.
+        Email is required.
       </div>
       <div *ngIf="email.errors.email">
         Incorrect email format
@@ -32,10 +32,10 @@
     <div *ngIf="password.invalid && (password.dirty || password.touched)"
          class="alert alert-danger">
       <div *ngIf="password.errors.required">
-        Name is required.
+        Password is required.
       </div>
       <div *ngIf="password.errors.minlength">
-        Name must be at least 6 characters long.
+        Password must be at least 6 characters long.
       </div>
     </div>
     <input type="password" id="user-repeatpass" name="confirmPassword" class="form-control" placeholder="Repeat Password" required
