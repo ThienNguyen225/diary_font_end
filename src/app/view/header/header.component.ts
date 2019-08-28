@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 import {User} from '../../interface/user.interface';
+import {Router} from '@angular/router';
 import {AuthService} from '../../service/auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   accessToken: string;
   isLogin = false;
   user: User;
@@ -16,8 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(
-      data => {
+    this.userService.getUser().subscribe(data => {
         this.user = data;
       }
     );
@@ -34,4 +33,5 @@ export class HomeComponent implements OnInit {
     this.isLogin = false;
     this.router.navigate(['']);
   }
+
 }
