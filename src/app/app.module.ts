@@ -14,6 +14,8 @@ import {UpdateComponent} from './view/users/update/update.component';
 import {RegisterComponent} from './view/users/register/register.component';
 import {TokenInterceptor} from './interceptor/token.interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './view/users/forgot-password/forgot-password.component';
+import { HeaderComponent } from './view/header/header.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HomeComponent,
     ProfileComponent,
     UpdateComponent,
+    ForgotPasswordComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
