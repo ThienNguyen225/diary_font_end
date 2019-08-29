@@ -14,6 +14,9 @@ export class UpdateComponent implements OnInit {
   user: User;
   updateForm = new FormGroup({
     name: new FormControl(''),
+    age: new FormControl(''),
+    phone: new FormControl(''),
+    address: new FormControl(''),
   });
 
   constructor(private userService: AuthService, private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router,
@@ -24,10 +27,25 @@ export class UpdateComponent implements OnInit {
     return this.updateForm.get('name');
   }
 
+  get age() {
+    return this.updateForm.get('age');
+  }
+
+  get phone() {
+    return this.updateForm.get('phone');
+  }
+
+  get address() {
+    return this.updateForm.get('address');
+  }
+
 
   ngOnInit() {
     this.updateForm = this.fb.group({
-      name: ['', [Validators.required]]
+      name: ['', [Validators.required]],
+      age: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]]
     });
     this.userService.getUser().subscribe(data => {
       this.user = data;
