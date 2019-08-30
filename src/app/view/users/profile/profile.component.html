@@ -14,8 +14,8 @@
     </div>
     <div class="col-md-6">
       <div class="profile-head">
-        <h5>
-          {{data.name}}
+        <h5 *ngIf="user">
+          {{user.name}}
         </h5>
         <h6>
           Web Developer and Designer
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-edit" [routerLink]= '["edit", data.id]'>Edit Profile</button>
+      <button class="btn btn-edit" [routerLink]= '["/profile/edit"]'>Edit Profile</button>
     </div>
   </div>
   <div class="row">
@@ -57,7 +57,7 @@
               <label>Name</label>
             </div>
             <div class="col-md-6">
-              <p>{{data.name}}</p>
+              <p *ngIf="user">{{user.name}}</p>
             </div>
           </div>
           <div class="row">
@@ -65,7 +65,7 @@
               <label>Email</label>
             </div>
             <div class="col-md-6">
-              <p>{{data.email}}</p>
+              <p *ngIf="user">{{user.email}}</p>
             </div>
           </div>
         </div>

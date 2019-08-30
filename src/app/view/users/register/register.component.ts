@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../../service/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {AuthService} from "../../auth.service";
-
 
 @Component({
   selector: 'app-register',
@@ -42,7 +41,7 @@ export class RegisterComponent implements OnInit {
     this.authService.signup(value).subscribe(
       data => {
         this.toastr.success('Bạn đã đăng ký thành công');
-        this.router.navigate(['']);
+        this.router.navigate(['login']);
       }
     );
   }
