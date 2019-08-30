@@ -1,20 +1,16 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-danger text-light py-2 main-nav">
-    <div class="container">
-      <a  class="navbar-brand" href=""><img src="" alt="Logo"></a>
-    </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" [routerLink]="['/profile/me']">Profile</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Sing Out</a>
-      </div>
-    </div>
-    <!--<div>-->
-      <!--<a (click)="logout($event)" *ngIf="isLogin"> <button type="button" class="btn btn-light btn-sm ">Logout</button></a>-->
-    <!--</div>-->
-  </nav>
-</header>
+<app-header></app-header>
+<div class="journal-thumb_controls">
+  <h3><a ui-sref="journal({id: journal.id})" class="ng-binding">
+    &nbsp;{{user.name}}</a></h3>
+  <div class="journal-thumb_controls_actions ng-scope" ng-if="journal.lock_type_id <= 1">
+    <a
+      class="journal-thumb_control new-entry col-9" [routerLink]="['/page/create']">
+      <span class="icon-new fa fa-pencil-square-o"></span>&nbsp;New Entry</a>
+    <a class="journal-thumb_control list col-3"
+       ui-sref="journal.entries({id: journal.id})" pz-tooltip="View Entries"
+       ng-click="clickListEntries()" href="/journals/19400199/entries"
+       data-toggle="tooltip" title=""
+       data-original-title="View Entries"><span class="fa fa-list"></span></a>
+  </div>
+</div>
+

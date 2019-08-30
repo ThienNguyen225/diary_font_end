@@ -10,7 +10,7 @@ import {User} from '../interface/user.interface';
 export class AuthService {
 
   API_SERVER = 'http://127.0.0.1:8000/api';
-  public isLoggedIn = new Subject<boolean>();
+  public isLoggedIn: boolean;
 
   constructor(private http: HttpClient) {
   }
@@ -19,16 +19,12 @@ export class AuthService {
     return this.http.post<User>(`${this.API_SERVER}/signup`, user);
   }
 
-  // login(email: string, password: string) {
-  //   const data = {email, password};
-  //   return this.http.post(`${this.API_SERVER}/api/login`, data);
-  // }
 
   login(email: string, password: string): Observable<any> {
     const data = {email, password};
     return this.http.post(`${this.API_SERVER}/login`, data).pipe(
       map(result => {
-        this.isLoggedIn.next(true);
+        this.isLoggedIn = true;
         return result;
       })
     );
@@ -40,5 +36,9 @@ export class AuthService {
 
   update(user: Partial<User>): Observable<User> {
     return this.http.put<User>(`${this.API_SERVER}/admin/user`, user);
+  }
+
+  chengePassword(data: Partial<any>): Observable<any> {
+    return this.http.put<any>(`${this.API_SERVER}/admin/reset/user`, data);
   }
 }

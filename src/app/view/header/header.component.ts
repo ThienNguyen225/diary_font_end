@@ -1,26 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import {User} from '../../interface/user.interface';
+import {Router} from '@angular/router';
 import {AuthService} from '../../service/auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   accessToken: string;
   isLogin = false;
   user: User;
-
-  constructor(private router: Router, private userService: AuthService) {
+  constructor(private router: Router, private userService: AuthService ) {
   }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(
-      data => {
+    this.userService.getUser().subscribe(data => {
         this.user = data;
-        console.log(this.user);
       }
     );
     this.accessToken = localStorage.getItem('ACCESS_TOKEN');
@@ -29,8 +26,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
-
   logout($event: MouseEvent) {
     event.preventDefault();
     localStorage.removeItem('ACCESS_TOKEN');
@@ -38,4 +33,5 @@ export class HomeComponent implements OnInit {
     this.isLogin = false;
     this.router.navigate(['']);
   }
+
 }
