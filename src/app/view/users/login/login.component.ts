@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {LoginService} from '../../../login.service';
+import {AuthService} from "../../../service/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -11,12 +11,13 @@ import {LoginService} from '../../../login.service';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
-  isLogin = false;
 
-  constructor(public api: LoginService,
+  constructor(public api: AuthService,
               private toastr: ToastrService,
               private router: Router) {
   }
+
+  isCheckLogin: boolean = false;
 
   ngOnInit() {
   }
@@ -26,14 +27,14 @@ export class LoginComponent implements OnInit {
     this.password = loginForm.password.value;
     this.api.login(this.email, this.password).subscribe(result => {
       localStorage.setItem('ACCESS_TOKEN', result.token);
-      if (result.token) {
-        this.isLogin = true;
-        this.toastr.success('Logged in successfully!');
-        this.router.navigate(['page/home']);
-      } else {
-        this.toastr.error('Wrong email or password!');
-      }
+      this.isCheckLogin = true;
     });
+    if (this.isCheckLogin) {
+      this.toastr.success('Success login!');
+      this.router.navigate(['page/home']);
+    } else {
+      this.toastr.error('Fail login!');
+    }
   }
 }
 

@@ -1,5 +1,30 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+// import {LoginComponent} from './users/login/login.component';
+// import {HomeComponent} from './home/home.component';
+// import {ProfileComponent} from './users/profile/profile.component';
+// import {UpdateComponent} from './users/update/update.component';
+// import {RegisterComponent} from './users/register/register.component';
+// import {LoginGuard} from "./login.guard";
+//
+//
+// const routes: Routes = [
+//   {path: '', redirectTo: 'login', pathMatch: 'full'},
+//   {path: 'login', component: LoginComponent},
+//   {path: 'signup', component: RegisterComponent},
+//   {
+//     path: 'user', canActivate: [LoginGuard],
+//     children: [
+//       {path: 'profile', component: ProfileComponent},
+//       {path: 'profile/edit/:id', component: UpdateComponent}
+//     ]
+//   },
+//   {
+//     path: 'page', canActivate: [LoginGuard],
+//     children: [
+//       {path: 'home', component: HomeComponent}
+//     ]
+//   },
 import {LoginComponent} from './view/users/login/login.component';
 import {HomeComponent} from './view/home/home.component';
 import {ProfileComponent} from './view/users/profile/profile.component';
@@ -8,7 +33,7 @@ import {RegisterComponent} from './view/users/register/register.component';
 import {LoginedGuard} from './logined.guard';
 import {ForgotPasswordComponent} from './view/users/forgot-password/forgot-password.component';
 import {HeaderComponent} from './view/header/header.component';
-import {CreateComponent} from "./view/diary/create/create.component";
+import {CreateComponent} from './view/diary/create/create.component';
 
 
 const routes: Routes = [
@@ -25,9 +50,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'page' , canActivate: [LoginedGuard],
+    path: 'page', canActivate: [LoginedGuard],
     children: [
       {path: 'home', component: HomeComponent},
+      {path: 'create', component: CreateComponent},
     ]
   },
   {

@@ -1,6 +1,18 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+// import { AppRoutingModule } from './app-routing.module';
+// import { AppComponent } from './app.component';
+// import { LoginComponent } from './users/login/login.component';
+// import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+// import { HomeComponent } from './home/home.component';
+// import {RouterModule} from '@angular/router';
+// import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// import {ToastrModule} from 'ngx-toastr';
+// import { ProfileComponent } from './users/profile/profile.component';
+// import { UpdateComponent } from './users/update/update.component';
+// import {RegisterComponent} from './users/register/register.component';
+// import {TokenInterceptor} from "./interceptors/token.interceptor";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './view/users/login/login.component';
@@ -18,7 +30,7 @@ import { ForgotPasswordComponent } from './view/users/forgot-password/forgot-pas
 import { HeaderComponent } from './view/header/header.component';
 import { CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { CreateComponent } from './view/diary/create/create.component';
-import {SidebarComponent} from './view/sidebar/sidebar.component';
+import {SidebarComponent} from './view/diary/sidebar/sidebar.component';
 
 
 @NgModule({

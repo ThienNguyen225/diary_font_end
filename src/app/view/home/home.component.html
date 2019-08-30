@@ -1,18 +1,24 @@
 <app-header></app-header>
-<div class="journal-thumb_controls">
-  <h3><a ui-sref="journal({id: journal.id})" class="ng-binding"
-         href="/journals/19400199">
-    &nbsp;{{user.name}}</a></h3>
-  <div class="journal-thumb_controls_actions ng-scope" ng-if="journal.lock_type_id <= 1">
-    <a
-      class="journal-thumb_control new-entry col-9" ui-sref="journal.entry.new({id: journal.id})" ng-click="clickNewEntry()"
-      routerLink="/diary/new">
-      <span class="icon-new fa fa-pencil-square-o" ></span>&nbsp;New Entry</a>
-    <a class="journal-thumb_control list col-3"
-       ui-sref="journal.entries({id: journal.id})" pz-tooltip="View Entries"
-       ng-click="clickListEntries()" href="/journals/19400199/entries"
-       data-toggle="tooltip" title=""
-       data-original-title="View Entries"><span class="fa fa-list"></span></a>
-  </div>
+<nav class="navbar navbar-light " style="background: #4b525b">
+  <h6 class="text-white">Displaying 1 journal</h6>
+  <a class="navbar-brand btn btn-primary text-white" style="margin-right: 10em" role="button" [routerLink]="['/page/create']">New Journal</a>
+
+</nav>
+<div class="row">
+  <div class="content">
+    <div class="rim"></div>
+    <div class="content-diary" >
+      <h3 class="text-center"><a class="ng-binding">&nbsp;{{user.name}}</a></h3>
+      <div class="journal-thumb_controls_actions ng-scope" >
+        <a class="journal-thumb_control new-entry col-9" [routerLink]="['/page/create']">
+          <span class="icon-new fa fa-pencil-square-o"></span>&nbsp;New Entry</a>
+        <a class="journal-thumb_control list col-3"
+           ui-sref="journal.entries({id: journal.id})" pz-tooltip="View Entries"
+           ng-click="clickListEntries()" href="/journals/19400199/entries"
+           data-toggle="tooltip" title=""
+           data-original-title="View Entries">
+          <span class="fa fa-list"></span></a>
+      </div>
+    </div>
 </div>
 

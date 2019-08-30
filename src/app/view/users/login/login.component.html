@@ -1,4 +1,11 @@
-<app-header></app-header>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger text-light py-2 main-nav">
+    <div class="container">
+      <a class="navbar-brand " [routerLink]="['/page/home']"><img src="/assets/image/logo1.png" height="50"
+                                                                  width="200"/></a>
+    </div>
+  </nav>
+</header>
 <div id="logreg-forms">
   <form class="form-signin" #loginForm (ngSubmit)="login(loginForm)">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
