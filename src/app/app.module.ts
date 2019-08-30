@@ -16,6 +16,9 @@ import {TokenInterceptor} from './interceptor/token.interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ForgotPasswordComponent } from './view/users/forgot-password/forgot-password.component';
 import { HeaderComponent } from './view/header/header.component';
+import { CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import { CreateComponent } from './view/diary/create/create.component';
+import {SidebarComponent} from './view/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -28,6 +31,8 @@ import { HeaderComponent } from './view/header/header.component';
     UpdateComponent,
     ForgotPasswordComponent,
     HeaderComponent,
+    CreateComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ import { HeaderComponent } from './view/header/header.component';
     ToastrModule.forRoot(),
     RouterModule,
     BrowserAnimationsModule,
+    CKEditorModule,
   ],
   providers: [
     {

@@ -1,0 +1,99 @@
+<div class="col-2 float-left" style="background-color: gray; height: max-content">
+<div class="sidebar-wrap">
+
+    <div class="sidebar__top">
+      <div class="sidebar_journals">
+        <div class="journals-dropdown dropdown"><a class="dropdown-link nav-link ng-binding" href=""
+                                                   data-toggle="dropdown">thieu la's Journal<span
+          class="icon fa fa-chevron-down"></span></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li><a ui-sref="journals" ng-click="vm.navigateJournal(null, $event)" href="/journals"><span
+              class="fa fa-home"></span>Home</a></li><!-- ngRepeat: j in vm.journals track by j.id -->
+            <li ng-repeat="j in vm.journals track by j.id"
+                ng-class="{          'active': j.id == vm.journal.id          }" class="ng-scope active"><a
+              ui-sref="journal({id: j.id})" ng-click="vm.navigateJournal(j, $event)" class="ng-binding"
+              href="/journals/19400205"><span class="lock fa fa-lock ng-hide" ng-show="j.lock_type_id > 1"></span>&nbsp;thieu
+              la's Journal</a></li><!-- end ngRepeat: j in vm.journals track by j.id --></ul>
+        </div>
+      </div>
+      <div class="sidebar__actions">
+        <div class="sidebar__search">
+          <form ng-submit="vm.search.submit(vm.search.query)" class="ng-pristine ng-valid"><span
+            class="fa fa-search search-icn"></span><input
+            class="js--global-search__input ng-pristine ng-untouched ng-valid ng-empty" type="text"
+            ng-model="vm.search.query" placeholder="Search journal...">
+            <button class="btn btn-clear submit-btn" type="submit"><span
+              class="fa fa-arrow-circle-o-right submit-icn"></span></button>
+          </form>
+        </div>
+        <a class="journal-settings icon-link" href="" uib-tooltip="Journal Settings" tooltip-placement="left"
+           ng-click="vm.openUpdateJournalModal()" ng-show="!vm.journal.ui.hideSettings"><span
+          class="settings fa fa-cog"></span></a><!-- ngIf: vm.journal.auto --></div>
+      <div class="sidebar-controls"><a class="new-entry btn btn-block btn-primary"
+                                       ui-sref="journal.entry.new({id: vm.journal.id})" ng-click="vm.navigateToNewEntry()"
+                                       ng-hide="!vm.journal.id" href="/journals/19400205/new"><span
+        class="fa fa-plus-circle"></span>&nbsp;New Entry</a></div>
+    </div>
+    <div class="sidebar-content">
+      <div class="entry-list">
+        <ul class="entries">
+          <li class="view-all"><a class="view-all btn btn-block btn-default"
+                                  ui-sref="journal.entries({id: vm.journal.id})" ng-click="vm.clickAllEntries()"
+                                  href="/journals/19400205/entries"><span class="fa fa-th-list"></span>&nbsp;View All
+            Entries</a></li>
+          <li class="view-starred"><a class="view-starred btn btn-block btn-default"
+                                      ui-sref="journal.entries({id: vm.journal.id, view: &quot;starred&quot;})"
+                                      ng-click="vm.clickAllEntries('starred')"
+                                      href="/journals/19400205/entries?view=starred"><span class="fa fa-star"></span>&nbsp;View
+            Starred Entries</a></li><!-- ngRepeat: e in vm.entries track by e.id -->
+          <li ng-repeat="e in vm.entries track by e.id"
+              ng-class="{          'active': vm.entryId == e.id &amp;&amp; !vm.selectedEntries.length        }"
+              class="ng-scope"><a class="sidebar-entry_link" href="" ng-click="entryClick($event, e.id)"><h3
+            class="ng-binding"><!-- ngIf: e.starred --><!-- ngIf: e.locked --><span ng-show="e.locked" class="ng-hide">&nbsp;</span>Thu.
+            8/29/2019</h3>
+            <p><label class="select-entry" for="entry-44301767" ng-click="vm.toggleEntrySelection(e.id)"
+                      ng-class="{              'checked': entryIsSelected(e.id)              }"
+                      ng-hide="e.is_read_only || e.locked"><span class="simple-checkbox"></span></label><label
+              class="select-entry_read-only ng-hide" for="" ng-show="e.is_read_only">Read Only</label><span
+              class="timestamp ng-binding">Thu. 8/29/2019</span><span class="shared ng-hide"
+                                                                      ng-show="e.shared || e.public_link_url"><span
+              ng-show="e.shared" class="ng-hide">shared</span><span ng-show="e.shared &amp;&amp; e.public_link_url"
+                                                                    class="ng-hide">,</span><span
+              ng-show="e.public_link_url" class="ng-hide">public</span></span></p></a></li>
+          <!-- end ngRepeat: e in vm.entries track by e.id -->
+          <li ng-repeat="e in vm.entries track by e.id"
+              ng-class="{          'active': vm.entryId == e.id &amp;&amp; !vm.selectedEntries.length        }"
+              class="ng-scope"><a class="sidebar-entry_link" href="" ng-click="entryClick($event, e.id)"><h3
+            class="ng-binding"><!-- ngIf: e.starred --><!-- ngIf: e.locked --><span ng-show="e.locked" class="ng-hide">&nbsp;</span>Tue.
+            8/20/2019</h3>
+            <p><label class="select-entry" for="entry-44068349" ng-click="vm.toggleEntrySelection(e.id)"
+                      ng-class="{              'checked': entryIsSelected(e.id)              }"
+                      ng-hide="e.is_read_only || e.locked"><span class="simple-checkbox"></span></label><label
+              class="select-entry_read-only ng-hide" for="" ng-show="e.is_read_only">Read Only</label><span
+              class="timestamp ng-binding">Tue. 8/20/2019</span><span class="shared ng-hide"
+                                                                      ng-show="e.shared || e.public_link_url"><span
+              ng-show="e.shared" class="ng-hide">shared</span><span ng-show="e.shared &amp;&amp; e.public_link_url"
+                                                                    class="ng-hide">,</span><span
+              ng-show="e.public_link_url" class="ng-hide">public</span></span></p></a></li>
+          <!-- end ngRepeat: e in vm.entries track by e.id -->
+          <li ng-repeat="e in vm.entries track by e.id"
+              ng-class="{          'active': vm.entryId == e.id &amp;&amp; !vm.selectedEntries.length        }"
+              class="ng-scope"><a class="sidebar-entry_link" href="" ng-click="entryClick($event, e.id)"><h3
+            class="ng-binding"><!-- ngIf: e.starred --><!-- ngIf: e.locked --><span ng-show="e.locked" class="ng-hide">&nbsp;</span>TA's
+            life</h3>
+            <p><label class="select-entry" for="entry-44068319" ng-click="vm.toggleEntrySelection(e.id)"
+                      ng-class="{              'checked': entryIsSelected(e.id)              }"
+                      ng-hide="e.is_read_only || e.locked"><span class="simple-checkbox"></span></label><label
+              class="select-entry_read-only ng-hide" for="" ng-show="e.is_read_only">Read Only</label><span
+              class="timestamp ng-binding">Tue. 8/20/2019</span><span class="shared ng-hide"
+                                                                      ng-show="e.shared || e.public_link_url"><span
+              ng-show="e.shared" class="ng-hide">shared</span><span ng-show="e.shared &amp;&amp; e.public_link_url"
+                                                                    class="ng-hide">,</span><span
+              ng-show="e.public_link_url" class="ng-hide">public</span></span></p></a></li>
+          <!-- end ngRepeat: e in vm.entries track by e.id -->
+          <li class="empty ng-hide" ng-show="!vm.entries.length">This journal has no entries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

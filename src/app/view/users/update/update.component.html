@@ -11,6 +11,37 @@
       <div *ngIf="name.errors.required">
         Name is required.
       </div>
+
+    </div>
+
+    <input type="number" id="age" name="age" formControlName="age" class="form-control" value="{{ user.age }}"
+           required="" autofocus="">
+    <div *ngIf="age.invalid && (age.dirty || age.touched)"
+         class="alert alert-danger">
+      <div *ngIf="age.errors.required">
+        Age is required.
+      </div>
+
+    </div>
+
+    <input type="number" id="phone" name="phone" formControlName="phone" class="form-control" [value]="user.phone"
+           required="" autofocus="">
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+         class="alert alert-danger">
+      <div *ngIf="phone.errors.required">
+        Phone is required.
+      </div>
+
+    </div>
+
+    <input type="text" id="address" name="address" formControlName="address" class="form-control" value="{{ user.address }}"
+           required="" autofocus="">
+    <div *ngIf="address.invalid && (address.dirty || address.touched)"
+         class="alert alert-danger">
+      <div *ngIf="address.errors.required">
+        Address is required.
+      </div>
+
     </div>
 
     <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Edit</button>
