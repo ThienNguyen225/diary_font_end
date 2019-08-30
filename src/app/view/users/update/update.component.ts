@@ -13,10 +13,10 @@ import {ToastrService} from 'ngx-toastr';
 export class UpdateComponent implements OnInit {
   user: User;
   updateForm = new FormGroup({
-    name: new FormControl(''),
-    age: new FormControl(''),
-    phone: new FormControl(''),
-    address: new FormControl(''),
+    name: new FormControl('name'),
+    age: new FormControl('age'),
+    phone: new FormControl('phone'),
+    address: new FormControl('address'),
   });
 
   constructor(private userService: AuthService, private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router,
