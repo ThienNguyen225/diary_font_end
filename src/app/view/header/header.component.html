@@ -1,7 +1,8 @@
-<header *ngIf="user">
+<header>
   <nav class="navbar navbar-expand-lg navbar-light bg-danger text-light py-2 main-nav">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/page/home']"><img src="" alt="Logo"></a>
+      <a class="navbar-brand" [routerLink]="['/page/home']"><img src="/assets/image/logo1.png" height="50"
+                                                                 width="200"/></a>
     </div>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -10,11 +11,10 @@
         <a class="dropdown-item" [routerLink]="['/profile/me']">Profile</a>
         <a class="dropdown-item" [routerLink]="['/profile/password']">Change Password</a>
         <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Sing Out</a>
+        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Sign Out</a>
       </div>
     </div>
-    <!--<div>-->
-    <!--<a (click)="logout($event)" *ngIf="isLogin"> <button type="button" class="btn btn-light btn-sm ">Logout</button></a>-->
-    <!--</div>-->
   </nav>
 </header>
+
+

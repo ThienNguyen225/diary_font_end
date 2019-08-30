@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DiaryService} from '../../service/diary.service';
+import {DiaryService} from '../../../service/diary.service';
 import {Router} from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
@@ -10,7 +10,7 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  public title: string = '';
+  title: string;
   public contents: string = '';
   public Editor = ClassicEditor;
   constructor(public api: DiaryService,
@@ -29,6 +29,7 @@ export class CreateComponent implements OnInit {
     this.title = createForm.title.value;
     this.api.addDiary(this.title, this.contents).subscribe(result => {
       this.router.navigate(['/page/create']);
+      window.location.reload();
     });
     console.log(this.title);
     console.log(this.contents);

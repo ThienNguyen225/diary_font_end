@@ -85,29 +85,28 @@ a:-webkit-any-link {
   padding: 24px 23px;
   font-weight: 300;
 }
-//::after, ::before {
-//  box-sizing: border-box;
-//}
-////@media (min-width: 568px);
-// .featured-journal .journal-thumb_wrap::before {
-//   position: absolute;
-//   content: "";
-//   left: 0px;
-//   width: 40px;
-//   top: 0px;
-//   bottom: 0px;
-//   z-index: 20;
-//   box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
-//   border-radius: 8px 0px 0px 8px;
-//   background: linear-gradient(to right, rgb(75, 82, 91), rgb(54, 60, 66));
-//   background-image: linear-gradient(to right, rgb(75, 82, 91), rgb(54, 60, 66));
-//   background-position-x: initial;
-//   background-position-y: initial;
-//   background-size: initial;
-//   background-repeat-x: initial;
-//   background-repeat-y: initial;
-//   background-attachment: initial;
-//   background-origin: initial;
-//   background-clip: initial;
-//   background-color: initial;
-// }
+.text-white{
+  margin-left: 10em;
+  font-size: 14px;
+}
+.rim{
+  width: 50px;
+  min-height: 500px;
+  background: #333333;
+  float: left;
+}
+.content{
+  margin-left: 400px;
+  margin-top: 20px;
+  width: 600px;
+  min-height: 500px;
+  background: #3C589C;
+
+}
+.content-diary{
+  width: 400px;
+  margin-left: 100px;
+  background: white;
+  margin-top: 200px;
+  border-radius: 10px;
+}

@@ -1,4 +1,11 @@
-<app-header></app-header>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger text-light py-2 main-nav">
+    <div class="container">
+      <a class="navbar-brand " [routerLink]="['/page/home']"><img src="/assets/image/logo1.png" height="50"
+                                                                  width="200"/></a>
+    </div>
+  </nav>
+</header>
 <div class="logreg-forms">
   <form action="/signup/" class="form-signup" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="social-login">

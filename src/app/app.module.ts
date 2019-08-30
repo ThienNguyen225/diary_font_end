@@ -28,8 +28,9 @@ import {TokenInterceptor} from './interceptor/token.interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ForgotPasswordComponent } from './view/users/forgot-password/forgot-password.component';
 import { HeaderComponent } from './view/header/header.component';
-import { CreateComponent } from './view/create/create.component';
-import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import { CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import { CreateComponent } from './view/diary/create/create.component';
+import {SidebarComponent} from './view/diary/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
     ForgotPasswordComponent,
     HeaderComponent,
     CreateComponent,
-
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,6 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
     RouterModule,
     BrowserAnimationsModule,
     CKEditorModule,
-
   ],
   providers: [
     {

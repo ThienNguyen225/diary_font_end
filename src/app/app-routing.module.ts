@@ -33,7 +33,7 @@ import {RegisterComponent} from './view/users/register/register.component';
 import {LoginedGuard} from './logined.guard';
 import {ForgotPasswordComponent} from './view/users/forgot-password/forgot-password.component';
 import {HeaderComponent} from './view/header/header.component';
-import {CreateComponent} from "./view/create/create.component";
+import {CreateComponent} from './view/diary/create/create.component';
 
 
 const routes: Routes = [
@@ -54,6 +54,12 @@ const routes: Routes = [
     children: [
       {path: 'home', component: HomeComponent},
       {path: 'create', component: CreateComponent},
+    ]
+  },
+  {
+    path: 'diary' , canActivate: [LoginedGuard],
+    children: [
+      {path: 'new', component: CreateComponent},
     ]
   }
 ];
