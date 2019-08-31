@@ -1,0 +1,36 @@
+textarea {
+  font-family: monospace;
+}
+
+form {
+  background: #eee;
+  padding-top: 10px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+}
+
+form input {
+  width: 30em;
+}
+
+form > div {
+  margin-bottom: 1em;
+}
+
+pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+
+.display {
+  background-color: red;
+  font-family: sans-serif;
+  font-size: 14px;
+  padding-left: 30%;
+  max-width: 800px;
+  min-width: 500px;
+}

@@ -30,15 +30,16 @@ export class AuthService {
     );
   }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(`${this.API_SERVER}/admin/user`);
+  getUser(): Observable<any> {
+    return this.http.get<any>(`${this.API_SERVER}/admin/user`);
   }
 
-  update(user: Partial<User>): Observable<User> {
-    return this.http.put<User>(`${this.API_SERVER}/admin/user`, user);
+  update(name: string, phone: number, address: string, age: number): Observable<any> {
+    const data = {name, phone, address, age};
+    return this.http.put(`${this.API_SERVER}/admin/user`, data);
   }
 
-  chengePassword(data: Partial<any>): Observable<any> {
+  changePassword(data: Partial<any>): Observable<any> {
     return this.http.put<any>(`${this.API_SERVER}/admin/reset/user`, data);
   }
 }

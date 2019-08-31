@@ -1,0 +1,12 @@
+<app-header></app-header>
+<form #updateForm (ngSubmit)="onSubmit(updateForm)">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ diary.title}}">
+  </div>
+  <div class="form-group">
+    <label for="contents">Content</label>
+    <ckeditor [editor]="Editor" id="contents" (change)="onChange($event)" name="contents"></ckeditor>
+  </div>
+  <button class="btn btn-primary btn-block"  type="submit"><i class="fas fa-user-plus"></i>Create</button>
+</form>

@@ -42,7 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit() {
     const value = this.passwordForm.value;
-    this.userService.chengePassword(value).subscribe(
+    this.userService.changePassword(value).subscribe(
       data => {
         if (typeof data.error === 'undefined') {
           this.toastr.success('thay đổi mật khẩu thành công');

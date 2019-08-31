@@ -12,31 +12,28 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class UpdateComponent implements OnInit {
   user: User;
-  updateForm = new FormGroup({
-    name: new FormControl(''),
-  });
+  name: string;
+  phone: number;
+  address: string;
+  age: number;
 
-  constructor(private userService: AuthService, private fb: FormBuilder, private activatedRoute: ActivatedRoute, private router: Router,
+  constructor(private userService: AuthService, private fb: FormBuilder, private activatedRoute:
+                ActivatedRoute, private router: Router,
               private toastr: ToastrService) {
   }
 
-  get name() {
-    return this.updateForm.get('name');
-  }
-
-
   ngOnInit() {
-    this.updateForm = this.fb.group({
-      name: ['', [Validators.required]]
-    });
     this.userService.getUser().subscribe(data => {
       this.user = data;
     });
   }
 
-  onSubmit() {
-    const value = this.updateForm.value;
-    this.userService.update(value).subscribe(
+  onSubmit(updateForm: HTMLFormElement) {
+    // this.name = updateForm.name.value;
+    this.phone = updateForm.phone.value;
+    this.address = updateForm.address.value;
+    this.age = updateForm.age.value;
+    this.userService.update(this.name, this.phone, this.address, this.age).subscribe(
       data => {
         this.toastr.success('Cập nhật thành công');
         this.router.navigate(['profile/me']);

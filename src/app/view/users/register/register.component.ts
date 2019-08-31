@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
     this.authService.signup(value).subscribe(
       data => {
         this.toastr.success('Bạn đã đăng ký thành công');
-        this.router.navigate(['login']);
+        this.router.navigate(['']);
       }
     );
   }

@@ -6,15 +6,11 @@
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false" *ngIf="user">{{ user.name }}</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" [routerLink]="['/profile/me']">Profile</a>
-        <a class="dropdown-item" [routerLink]="['/profile/password']">Change Password</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Sing Out</a>
-      </div>
+      <ul class="dropdown-menu" style="width: 2px" aria-labelledby="dropdownMenuButton">
+        <li class="dropdown-item" [routerLink]="['/profile/me']">Profile</li>
+        <li class="dropdown-item" [routerLink]="['/profile/password']">Change Password</li>
+        <li class="dropdown-item" (click)="logout($event)" *ngIf="isLogin">Sing Out</li>
+      </ul>
     </div>
-    <!--<div>-->
-    <!--<a (click)="logout($event)" *ngIf="isLogin"> <button type="button" class="btn btn-light btn-sm ">Logout</button></a>-->
-    <!--</div>-->
   </nav>
 </header>
