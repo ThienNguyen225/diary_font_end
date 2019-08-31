@@ -21,6 +21,5 @@ export class ProfileComponent implements OnInit {
         this.user = data;
       }
     );
-    console.log(this.user.id);
   }
 }

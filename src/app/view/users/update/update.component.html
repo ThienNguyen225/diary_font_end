@@ -1,49 +1,16 @@
 <app-header></app-header>
-<div  class="logreg-forms" *ngIf="user">
-  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" class="form-signup">
-
+<div class="logreg-forms" *ngIf="user">
+  <form #updateForm (ngSubmit)="onSubmit(updateForm)" class="form-signup">
     <p style="text-align:center">Edit Profile</p>
 
-    <input type="text" id="name" name="name" formControlName="name" class="form-control" value="{{ user.name }}"
-           required="" autofocus="">
-    <div *ngIf="name.invalid && (name.dirty || name.touched)"
-         class="alert alert-danger">
-      <div *ngIf="name.errors.required">
-        Name is required.
-      </div>
-
-    </div>
-
-    <input type="number" id="age" name="age" formControlName="age" class="form-control" value="{{ user.age }}"
-           required="" autofocus="">
-    <div *ngIf="age.invalid && (age.dirty || age.touched)"
-         class="alert alert-danger">
-      <div *ngIf="age.errors.required">
-        Age is required.
-      </div>
-
-    </div>
-
-    <input type="number" id="phone" name="phone" formControlName="phone" class="form-control" [value]="user.phone"
-           required="" autofocus="">
-    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
-         class="alert alert-danger">
-      <div *ngIf="phone.errors.required">
-        Phone is required.
-      </div>
-
-    </div>
-
-    <input type="text" id="address" name="address" formControlName="address" class="form-control" value="{{ user.address }}"
-           required="" autofocus="">
-    <div *ngIf="address.invalid && (address.dirty || address.touched)"
-         class="alert alert-danger">
-      <div *ngIf="address.errors.required">
-        Address is required.
-      </div>
-
-    </div>
-
+    <input type="text" id="name" name="name" class="form-control" value="{{ user.name }}"
+           required>
+    <input type="number" id="phone" name="phone" class="form-control" value="{{ user.phone }}"
+           required>
+    <input type="text" id="address" name="address" class="form-control" value="{{ user.address }}"
+           required>
+    <input type="number" id="age" name="age" class="form-control" value="{{ user.age }}"
+           required>
     <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Edit</button>
     <a [routerLink]="['/profile/me']" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
   </form>

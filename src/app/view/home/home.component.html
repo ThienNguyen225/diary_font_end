@@ -6,7 +6,7 @@
   <div class="journal-thumb_controls_actions ng-scope" ng-if="journal.lock_type_id <= 1">
     <a
       class="journal-thumb_control new-entry col-9" ui-sref="journal.entry.new({id: journal.id})" ng-click="clickNewEntry()"
-      routerLink="/diary/new">
+      routerLink="/home/create">
       <span class="icon-new fa fa-pencil-square-o" ></span>&nbsp;New Entry</a>
     <a class="journal-thumb_control list col-3"
        ui-sref="journal.entries({id: journal.id})" pz-tooltip="View Entries"

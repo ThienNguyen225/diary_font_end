@@ -7,14 +7,15 @@ import {UpdateComponent} from './view/users/update/update.component';
 import {RegisterComponent} from './view/users/register/register.component';
 import {LoginedGuard} from './logined.guard';
 import {ForgotPasswordComponent} from './view/users/forgot-password/forgot-password.component';
-import {HeaderComponent} from './view/header/header.component';
-import {CreateComponent} from "./view/diary/create/create.component";
+import {CreateComponent} from './view/users/diary/create/create.component';
+import {ShowComponent} from './view/users/diary/show/show.component';
+import {UpdateDiaryComponent} from './view/users/diary/update-diary/update-diary.component';
+import {DeleteComponent} from "./view/users/diary/delete/delete.component";
 
 
 const routes: Routes = [
   {path: 'signup', component: RegisterComponent},
   {path: '', component: LoginComponent},
-  {path: '', component: HeaderComponent},
 
   {
     path: 'profile', canActivate: [LoginedGuard],
@@ -25,15 +26,18 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'page' , canActivate: [LoginedGuard],
+    path: 'page', canActivate: [LoginedGuard],
     children: [
       {path: 'home', component: HomeComponent},
     ]
   },
   {
-    path: 'diary' , canActivate: [LoginedGuard],
+    path: 'home', canActivate: [LoginedGuard],
     children: [
-      {path: 'new', component: CreateComponent},
+      {path: 'create', component: CreateComponent},
+      {path: 'update/:id', component: UpdateDiaryComponent},
+      {path: 'show/:id', component: ShowComponent},
+      {path: 'delete/:id', component: DeleteComponent}
     ]
   }
 ];
