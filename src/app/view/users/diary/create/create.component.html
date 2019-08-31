@@ -1,12 +1,24 @@
 <app-header></app-header>
-<form #createForm (ngSubmit)="onSubmit(createForm)">
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" name="title">
+<app-sidebar></app-sidebar>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Using Ckeditor in Angular</h5>
+        <form #createForm (ngSubmit)="onSubmit(createForm)">
+          <input class="col-md-12" type="text" name="title">
+          <br>
+          <hr>
+          <br>
+          <ckeditor [editor]="Editor" (change)="onChange($event)" style="height: 1000px" ></ckeditor>
+          <br>
+          <button type="submit" class="btn btn-success">Create</button>
+        </form>
+
+      </div>
+
+    </div>
   </div>
-  <div class="form-group">
-    <label for="contents">Content</label>
-    <ckeditor [editor]="Editor" id="contents" (change)="onChange($event)" name="contents"></ckeditor>
-  </div>
-  <button class="btn btn-primary btn-block"  type="submit"><i class="fas fa-user-plus"></i>Create</button>
-</form>
+</div>
+
+

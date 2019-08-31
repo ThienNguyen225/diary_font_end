@@ -1,14 +1,21 @@
-<div class="container">
-  <table class="table table-striped">
-    <tr>
-      <th>Name</th>
-      <th>Author</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>{{diary.title}}</td>
-      <td>{{diary.contents}}</td><td>
-      </td>
-    </tr>
-  </table>
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{diary.title}}</h5>
+        <br>
+        <hr>
+        <br>
+        <h1></h1>
+        <ckeditor [editor]="Editor" data="{{diary.contents}}"></ckeditor>
+        <br>
+        <button class="btn btn-warning"><a routerLink="/home/update/{{diary.id}}">Update</a></button>
+        <button class="btn btn-danger"><a routerLink="/home/delete/{{ diary.id}}">Delete</a></button>
+      </div>
+    </div>
+  </div>
 </div>
+
+

@@ -8,9 +8,9 @@ import {RegisterComponent} from './view/users/register/register.component';
 import {LoginedGuard} from './logined.guard';
 import {ForgotPasswordComponent} from './view/users/forgot-password/forgot-password.component';
 import {CreateComponent} from './view/users/diary/create/create.component';
-import {UpdateDiaryComponent} from './view/users/diary/update-diary/update-diary.component';
-import {ShowDiaryComponent} from './view/users/diary/show-diary/show-diary.component';
 import {ShowComponent} from './view/users/diary/show/show.component';
+import {UpdateDiaryComponent} from './view/users/diary/update-diary/update-diary.component';
+import {DeleteComponent} from "./view/users/diary/delete/delete.component";
 
 
 const routes: Routes = [
@@ -35,9 +35,9 @@ const routes: Routes = [
     path: 'home', canActivate: [LoginedGuard],
     children: [
       {path: 'create', component: CreateComponent},
-      {path: 'show', component: ShowDiaryComponent},
       {path: 'update/:id', component: UpdateDiaryComponent},
       {path: 'show/:id', component: ShowComponent},
+      {path: 'delete/:id', component: DeleteComponent}
     ]
   }
 ];

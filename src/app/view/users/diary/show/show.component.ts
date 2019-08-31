@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Diary} from '../../../../interface/diary.interface';
 import {DiaryService} from '../../../../service/diary/diary.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 @Component({
   selector: 'app-show',
@@ -9,6 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./show.component.scss']
 })
 export class ShowComponent implements OnInit {
+  public Editor = ClassicEditor;
   diary: Diary;
   id: number;
 
@@ -20,7 +23,6 @@ export class ShowComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.diaryService.getDiary(this.id).subscribe(data => {
       this.diary = data.data;
-      console.log(this.diary);
     });
   }
 

@@ -23,6 +23,7 @@ export class DiaryService {
 
   update(tilte: string, contents: string, id: number): Observable<any> {
     const diary = {tilte, contents};
+    console.log(diary);
     return this.http.put(`${this.API_SERVER}/user/diary/${id}`, diary);
   }
 
@@ -30,7 +31,7 @@ export class DiaryService {
     return this.http.get(`${this.API_SERVER}/user/diary/${id}`);
   }
 
-  // delete(diary: Partial<Diary>, id: number): Observable<Diary> {
-  //   return this.http.delete<Diary>(`${this.API_SERVER}/user/diary/${id}`, diary);
-  // }
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.API_SERVER}/user/diary/${id}`);
+  }
 }

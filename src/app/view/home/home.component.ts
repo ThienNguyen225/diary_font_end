@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {User} from '../../interface/user.interface';
 import {AuthService} from '../../service/auth.service';
@@ -12,13 +12,15 @@ export class HomeComponent implements OnInit {
   accessToken: string;
   isLogin = false;
   user: User;
-  constructor(private router: Router, private userService: AuthService ) {
+
+  constructor(private router: Router, private userService: AuthService) {
   }
 
   ngOnInit() {
     this.userService.getUser().subscribe(
       data => {
         this.user = data;
+        console.log(this.user);
       }
     );
     this.accessToken = localStorage.getItem('ACCESS_TOKEN');
@@ -26,6 +28,8 @@ export class HomeComponent implements OnInit {
       this.isLogin = true;
     }
   }
+
+
 
   logout($event: MouseEvent) {
     event.preventDefault();

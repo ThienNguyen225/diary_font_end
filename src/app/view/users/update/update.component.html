@@ -1,7 +1,6 @@
 <app-header></app-header>
-<div  class="logreg-forms" *ngIf="user">
+<div class="logreg-forms" *ngIf="user">
   <form #updateForm (ngSubmit)="onSubmit(updateForm)" class="form-signup">
-
     <p style="text-align:center">Edit Profile</p>
 
     <input type="text" id="name" name="name" class="form-control" value="{{ user.name }}"

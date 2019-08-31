@@ -16,12 +16,13 @@ import {TokenInterceptor} from './interceptor/token.interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ForgotPasswordComponent } from './view/users/forgot-password/forgot-password.component';
 import { HeaderComponent } from './view/header/header.component';
-import { CreateComponent } from './view/users/diary/create/create.component';
-import { DeleteComponent } from './view/users/diary/delete/delete.component';
-import { UpdateDiaryComponent } from './view/users/diary/update-diary/update-diary.component';
+import {DeleteComponent} from './view/users/diary/delete/delete.component';
+import {UpdateDiaryComponent} from './view/users/diary/update-diary/update-diary.component';
+import {ShowComponent} from './view/users/diary/show/show.component';
+import {SidebarComponent} from './view/sidebar/sidebar.component';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
-import { ShowDiaryComponent } from './view/users/diary/show-diary/show-diary.component';
-import { ShowComponent } from './view/users/diary/show/show.component';
+import {CreateComponent} from './view/users/diary/create/create.component';
+
 
 @NgModule({
   declarations: [
@@ -33,11 +34,11 @@ import { ShowComponent } from './view/users/diary/show/show.component';
     UpdateComponent,
     ForgotPasswordComponent,
     HeaderComponent,
-    CreateComponent,
     DeleteComponent,
     UpdateDiaryComponent,
-    ShowDiaryComponent,
     ShowComponent,
+    SidebarComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

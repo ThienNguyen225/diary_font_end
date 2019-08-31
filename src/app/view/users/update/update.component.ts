@@ -29,7 +29,7 @@ export class UpdateComponent implements OnInit {
   }
 
   onSubmit(updateForm: HTMLFormElement) {
-    // this.name = updateForm.name.value;
+    this.name = updateForm.name.value;
     this.phone = updateForm.phone.value;
     this.address = updateForm.address.value;
     this.age = updateForm.age.value;

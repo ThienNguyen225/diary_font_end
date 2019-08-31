@@ -28,10 +28,11 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(createForm: HTMLFormElement) {
-    // this.title = createForm.title.value;
+    this.title = createForm.title.value;
     this.diaryService.create(this.title, this.contents).subscribe(data => {
       this.toastr.success('Thêm thành công');
     });
+    window.location.reload();
   }
 
 }
